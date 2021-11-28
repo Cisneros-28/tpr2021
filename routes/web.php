@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CursoController;
+use App\Http\Controllers\ClienteController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,17 +15,17 @@ use App\Http\Controllers\CursoController;
 |
 */
 
-Route::get('/', HomeController::class);
+//Route::get('/', HomeController::class);
 
  
 
-Route::get('cursos', [CursoController::class,'index']);
+//Route::get('cursos', [CursoController::class,'index']);
 
 
-Route::get('cursos/create', [CursoController::class,'create']);
+//Route::get('cursos/create', [CursoController::class,'create']);
 
 
-Route::get('cursos/{curso}', [CursoController::class,'show']);
+//Route::get('cursos/{curso}', [CursoController::class,'show']);
 
 
 
@@ -37,10 +38,9 @@ Route::get('cursos/{curso}', [CursoController::class,'show']);
     
 });  */
 
+Route::get('/', function (){
+    return view('welcome');
+});
 
 
-
-
-
-
- 
+Route::resource('/cliente',ClienteController::class);
